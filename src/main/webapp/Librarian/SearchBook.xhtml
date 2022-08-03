@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Search</title>
+    <link href="../css/SFines.css" rel="stylesheet" type="text/css" />
+  </h:head>
+  <h:body>
+  <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+           <!--profile image & text-->
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a href="LibrarianHome.jsf" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Books.jsf">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Books</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="ViewOrders.jsp">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">View Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Fines.jsp">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Fines</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.jsf">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+  
+    <h3 align="center">Search Books</h3>
+    <center>
+    <h:form>
+    SEARCH:
+    <h:inputText value="#{bookBean.bookid}" id="bookid"/>
+    <br/><br/>
+    <h:commandButton action="#{bookBean.findbook()}" value="SEARCH" />
+    <br/><br/>
+    
+  </h:form>
+  <h:outputText style="color:red" value="#{bookBean.bookid}"></h:outputText>
+  <h:outputText style="color:red" value="#{bookBean.bookname}"></h:outputText>
+  <h:outputText style="color:red" value="#{bookBean.genre}"></h:outputText>
+  <h:outputText style="color:red" value="#{bookBean.edition}"></h:outputText>
+  <h:outputText style="color:red" value="#{bookBean.location}"></h:outputText>
+  </center>
+    </h:body>
+     <style>  
+
+table, th, td {
+  border:2px solid black;
+}
+</style>
+    
+</html>

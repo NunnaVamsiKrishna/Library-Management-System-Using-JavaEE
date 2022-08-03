@@ -1,0 +1,84 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title> Add Student </title>
+<link href="../css/SFines.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+           <!--profile image & text-->
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a href="adminhome.jsf" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="ViewOrders.jsp">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">View Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Fines.jsp">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Fines</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="adminhome.jsf">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Back</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.jsf">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+
+<h2 align="center">Add Student</h2>
+  <center>
+  <h:form >
+    Student ID:
+    <h:inputText value="#{stuBean.id}"/>
+    <br/><br/>
+    Student Name:
+    <h:inputText value="#{stuBean.name}"/>
+    <br/><br/>
+    Student Gender:
+    <h:inputText value="#{stuBean.gender}"/>
+    <br/><br/>
+    Student Department:
+    <h:inputText value="#{stuBean.dept}"/>
+    <br/><br/>
+    Student Email:
+    <h:inputText value="#{stuBean.email}"/>
+    <br/><br/>
+    Student Mobile:
+    <h:inputText value="#{stuBean.phone}"/>
+    <br/><br/>
+    Password:
+    <h:inputSecret label="Password" value="#{stuBean.pwd}"/>
+    <br/><br/>
+    
+    <h:commandButton action="#{stuBean.addStudent()}" value="ADD" />
+    <br/><br/>
+    
+  </h:form>
+  
+  <h:outputText align="center" style="color:red" value="#{stuBean.response}"></h:outputText>
+</center>
+</body>
+</html>

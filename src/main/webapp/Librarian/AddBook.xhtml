@@ -1,0 +1,75 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title> Add Book </title>
+<link href="../css/SFines.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+           <!--profile image & text-->
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a href="adminhome.jsf" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Books.jsf">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Books</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="ViewOrders.jsp">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">View Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Fines.jsp">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Fines</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.jsf">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+
+<h2 align="center">Add Book</h2>
+<center>
+  <h:form >
+    Book ID:
+    <h:inputText value="#{bookBean.bookid}"/>
+    <br/><br/>
+    Book Name:
+    <h:inputText value="#{bookBean.bookname}"/>
+    <br/><br/>
+    Book Genre:
+    <h:inputText value="#{bookBean.genre}"/>
+    <br/><br/>
+    Book Edition:
+    <h:inputText value="#{bookBean.edition}"/>
+    <br/><br/>
+    Book Location:
+    <h:inputText value="#{bookBean.location}"/>
+    <br/><br/>
+    
+    <h:commandButton action="#{bookBean.insertbook()}" value="ADD" />
+    <br/><br/>
+    
+  </h:form>
+  </center>
+  <h:outputText style="color:red" value="#{bookBean.response}"></h:outputText>
+</body>
+</html>

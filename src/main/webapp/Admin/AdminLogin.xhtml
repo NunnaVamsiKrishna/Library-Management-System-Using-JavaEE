@@ -1,0 +1,25 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title> Admin login </title>
+<link href="../css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="box">
+<h2>Admin login </h2>
+  <h:form>
+    Username:
+    <h:inputText styleClass="input" value="#{admin.aid}"/>
+    <br/><br/>
+    
+    Password:
+    <h:inputSecret styleClass="input" label="Password" value="#{admin.pwd}"/>
+    <br/><br/>
+    
+    <h:commandButton styleClass="btn" action="#{admin.checkadmin()}" value="login" />
+    <br/><br/>
+    
+  </h:form>
+  </div>
+</body>
+</html>

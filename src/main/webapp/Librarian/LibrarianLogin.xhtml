@@ -1,0 +1,25 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title> Librarian login </title>
+<link href="../css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="box">
+<h2>Librarian login </h2>
+  <h:form>
+    Librarian ID:
+    <h:inputText styleClass="input" value="#{libBean.lid}" id="lid"/>
+    <br/><br/>
+    
+    Password:
+    <h:inputSecret styleClass="input" label="Password" value="#{libBean.lpwd}" id="lpwd"/>
+    <br/><br/>
+    
+    <h:commandButton styleClass="btn" action="#{libBean.checklib()}" value="login" />
+    <br/><br/>
+    
+  </h:form>
+  </div>
+</body>
+</html>

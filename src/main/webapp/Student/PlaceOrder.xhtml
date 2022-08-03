@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Available Books</title>
+    <link href="../css/SFines.css" rel="stylesheet" type="text/css" />
+  </h:head>
+  <h:body>
+  <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+           <!--profile image & text-->
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a href="StudentHome.jsp" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="ViewBooks.jsf">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Find a book</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="PlaceOrder.jsp">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Place Order</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="ViewOrders.jsp">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">View Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Fines.jsp">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Fines</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.jsf">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    <h3 align="center">View All Books</h3>
+    
+    <div align="center">
+        <h:form>
+        Transaction no:
+    <h:inputText value="#{tranBean.transactionno}"/>
+    <br/><br/>
+    Date:
+    <h:inputText value="#{tranBean.date}"/>
+    <br/><br/>
+    Book name:
+    <h:inputText value="#{tranBean.book_name}"/>
+    <br/><br/>
+    Book id:
+    <h:inputText value="#{tranBean.book_id}"/>
+    <br/><br/>
+    Fine:
+    <h:inputText value="#{tranBean.fine}"/>
+    <br/><br/>
+    days:
+    <h:inputText value="#{tranBean.days}"/>
+    <br/><br/>
+    
+    <h:commandButton action="#{tranBean.newTran()}" value="Place" />
+    <br/><br/>
+    
+        </h:form>
+    </div>
+    </h:body>
+     <style>  
+
+table, th, td {
+  border:2px solid black;
+}
+</style>
+    
+</html>

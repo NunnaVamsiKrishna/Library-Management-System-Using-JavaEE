@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Available Books</title>
+    <link href="../css/SFines.css" rel="stylesheet" type="text/css" />
+  </h:head>
+  <h:body>
+  <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+           <!--profile image & text-->
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a href="LibrarianHome.jsf" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Books.jsf">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Books</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="ViewOrders.jsp">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">View Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Fines.jsp">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Fines</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.jsf">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+  
+    <h3 align="center">View All Books</h3>
+    
+    <div align="center">
+        <table>
+    <h:dataTable value="#{tranBean.TList}" var="row">
+
+    <h:column>
+        <f:facet name="header">TransactionID</f:facet>
+           #{row.bookid}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Name</f:facet>
+           #{row.bookname}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Genre</f:facet>
+           #{row.genre}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Edition</f:facet>
+           #{row.edition}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Location</f:facet>
+           #{row.location}
+    </h:column>
+    
+    
+    <h:column>
+    <f:facet name="header">Operations</f:facet>
+    <h:form>
+    <h:commandLink action="#{bookBean.deletebook(row)}" value="Delete" />
+    </h:form>
+    </h:column>
+    
+    </h:dataTable>
+   
+</table>
+<h:outputText style="color:red" value="#{bookBean.response}"></h:outputText>
+    </div>
+    </h:body>
+     <style>  
+
+table, th, td {
+  border:2px solid black;
+}
+</style>
+    
+</html>

@@ -1,0 +1,25 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title> Student login </title>
+<link href="../css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="box">
+<h2>Student login </h2>
+  <h:form>
+    Student ID:
+    <h:inputText styleClass="input" value="#{stuBean.id}" id="sid"/>
+    <br/><br/>
+    
+    Password:
+    <h:inputSecret styleClass="input" label="Password" value="#{stuBean.pwd}" id="spwd"/>
+    <br/><br/>
+    
+    <h:commandButton styleClass="btn" action="#{stuBean.checkstu()}" value="login"/>
+    <br/><br/>
+    
+  </h:form>
+  </div>
+</body>
+</html>

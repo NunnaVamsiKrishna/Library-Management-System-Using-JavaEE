@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+body{
+	align-items: center;
+	background-color: #1f96ff;
+	font-family: sans-serif;;
+}
+.box{
+	text-align:center;
+	align-items: center;
+	padding:50px 30px;
+	margin-left:80vh;
+	margin-top:20vh;
+	width:300px;
+	align-content:center;
+	border-width:3px;
+	border-style:solid;
+	border-radius:10px;
+	background-color: white;
+}
+.btn{
+	padding:10px 40px;
+	font-size:large;
+	background-color: maroon;
+	align-content: center;
+	color: white;
+	border-radius:10px;
+}
+.input{
+	height:50px;
+	border-color:black;
+	border-radius:10px;
+	width:300px;
+	border-width: 3px;
+	border-style: solid;
+}

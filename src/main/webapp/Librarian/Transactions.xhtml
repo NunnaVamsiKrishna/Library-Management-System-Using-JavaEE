@@ -1,0 +1,81 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title> Add Book </title>
+<link href="../css/SFines.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+           <!--profile image & text-->
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a href="adminhome.jsf" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Books.jsf">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Books</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="ViewOrders.jsp">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">View Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Fines.jsp">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Fines</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.jsf">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+<div align="center">
+<table border="3 px">
+    <h:dataTable value="#{tranBean.TList}" var="row">
+
+    <h:column>
+        <f:facet name="header">T no</f:facet>
+           #{row.transactionno}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Date</f:facet>
+           #{row.date}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Book Name</f:facet>
+           #{row.book_name}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Book ID</f:facet>
+           #{row.book_id}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Fines</f:facet>
+           #{row.fine}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Days</f:facet>
+           #{row.days}
+    </h:column>
+    </h:dataTable>
+   </table>
+
+</div>
+</body>
+</html>
